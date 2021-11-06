@@ -1,18 +1,75 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div style="position: relative">
+    <div class="wrapper">
+      <div class="search">
+        <form class="pure-form">
+          <i class="fas fa-search"></i><input v-model="searchText" />
+        </form>
+      </div>
+    </div>
+    <parkList :parks="parks" />
+    <div style="position: absolute; bottom: 5px; left: 600px">
+      <footer>
+        <a
+          href="https://github.com/BYU-CS-260-Spring-2021/lab-3b-grocery-store-gmsteck"
+          target="_blank"
+          >Github</a
+        >
+      </footer>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import parkList from "../components/parkList.vue";
 export default {
   name: "Home",
   components: {
-    HelloWorld,
+    parkList,
+  },
+  data() {
+    return {
+      searchText: "",
+    };
+  },
+  computed: {
+    parks() {
+      return this.$root.$data.nationalParks;
+    },
   },
 };
 </script>
+
+<style scoped>
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 50%;
+}
+
+form {
+  display: table;
+  width: 100%;
+}
+
+i {
+  display: table-cell;
+  padding-left: 10px;
+  width: 1px;
+}
+
+input {
+  display: table-cell;
+  font-size: 20px;
+  border: none !important;
+  box-shadow: none !important;
+  width: 100%;
+  height: 40px;
+}
+</style>
