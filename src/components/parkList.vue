@@ -1,14 +1,14 @@
 <template>
-  <div class="wrapper">
-    <div class="products">
-      <div class="product" v-for="park in parks" :key="park.Name">
-        <div class="info">
+  <div>
+    <div class="list">
+      <div class="park" v-for="park in parks" :key="park.Name">
+        <div>
+          <div class="image">
+            <img :src="'/images/' + park.Image" />
+          </div>
           <h1>{{ park.Name }}</h1>
           <p>{{ park.State }}</p>
           <p>{{ park.Size }} acres</p>
-        </div>
-        <div class="image">
-          <img :src="'/images/' + park.Image" />
         </div>
         <div class="add">
           <button class="auto" @click="add(park)">Add to Itinerary</button>
@@ -26,74 +26,60 @@ export default {
   },
   methods: {
     add(park) {
-      this.$root.$data.parkList.push(park);
+      if (this.$root.$data.parkList.includes(park));
+      else {
+        this.$root.$data.parkList.push(park);
+      }
     },
   },
 };
 </script>
 
 <style scoped>
-.wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.image {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
-.products {
-  margin-top: 20px;
-  display: flex;
+img {
+  width: auto;
+  height: 100%;
+  margin-left: -50px;
+}
+
+.list {
+  display: inline-flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.product {
-  margin: 10px;
-  margin-top: 50px;
-  width: 200px;
-}
-
-.product img {
-  border: 2px solid #333;
-  height: 250px;
-  width: 200px;
-  object-fit: cover;
-}
-
-.product .image {
-  display: flex;
+  align-content: space-around;
   justify-content: center;
-  margin-bottom: 5px;
+  border-radius: 10px;
+  margin-bottom: 60px;
+  margin-top: 60px;
 }
 
-.info {
-  background: #f2921d;
-  color: #000;
-  padding: 10px 30px;
-  height: 80px;
-}
-
-.info h1 {
-  font-size: 16px;
-}
-
-.info h2 {
-  font-size: 14px;
-}
-
-.info p {
-  margin: 0px;
-  font-size: 10px;
-}
-
-.price {
-  display: flex;
+.park {
+  margin: 20px;
 }
 
 button {
   height: 50px;
+  background: rgb(68, 68, 68);
+  color: white;
+  border: none;
+  border-radius: 10%;
+}
+
+button:hover {
+  height: 50px;
   background: rgb(48, 48, 48);
   color: white;
   border: none;
+  border-radius: 10%;
 }
 
 button:active {

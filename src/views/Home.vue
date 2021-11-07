@@ -1,5 +1,6 @@
 <template>
   <div style="position: relative">
+    <h2>Search Parks by State</h2>
     <div class="wrapper">
       <div class="search">
         <form class="pure-form">
@@ -10,9 +11,7 @@
     <parkList :parks="parks" />
     <div style="position: absolute; bottom: 5px; left: 600px">
       <footer>
-        <a
-          href="https://github.com/BYU-CS-260-Spring-2021/lab-3b-grocery-store-gmsteck"
-          target="_blank"
+        <a href="https://github.com/gmsteck/creative3" target="_blank"
           >Github</a
         >
       </footer>
@@ -34,7 +33,10 @@ export default {
   },
   computed: {
     parks() {
-      return this.$root.$data.nationalParks;
+      return this.$root.$data.nationalParks.filter(
+        (park) =>
+          park.State.toLowerCase().search(this.searchText.toLowerCase()) >= 0
+      );
     },
   },
 };

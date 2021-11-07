@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>National Park Trip Planner</h1>
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/park">Itinerary</router-link> |
