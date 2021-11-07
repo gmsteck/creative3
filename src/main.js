@@ -8,6 +8,7 @@ import parks from "./parks.js";
 
 let data = {
   nationalParks: parks,
+  parkList: [],
 };
 
 new Vue({
