@@ -11,7 +11,9 @@
           <img :src="'/images/' + park.Image" />
         </div>
         <div class="add">
-          <button class="auto" @click="add(park)">Add to Itinerary</button>
+          <button class="auto" @click="remove(park)">
+            Remove from Itinerary
+          </button>
         </div>
       </div>
     </div>
@@ -20,13 +22,13 @@
 
 <script>
 export default {
-  name: "ParkList",
+  name: "ItineraryList",
   props: {
     parks: Array,
   },
   methods: {
-    add(park) {
-      this.$root.$data.parkList.push(park);
+    remove(park) {
+      this.$root.$data.parkList.splice(park, 1);
     },
   },
 };
@@ -66,7 +68,7 @@ export default {
 }
 
 .info {
-  background: #f2921d;
+  background: #88e378;
   color: #000;
   padding: 10px 30px;
   height: 80px;
@@ -91,19 +93,9 @@ export default {
 
 button {
   height: 50px;
-  background: rgb(48, 48, 48);
-  color: white;
-  border: none;
-}
-
-button:active {
-  height: 50px;
   background: #000;
   color: white;
   border: none;
-  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
-  -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
-  box-shadow: inset 0px 0px 5px #c1c1c1;
 }
 
 .auto {

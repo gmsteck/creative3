@@ -343,4 +343,4 @@ let parks = [
   },
 ];
 
-export default parks
+export default parks;
