@@ -97,13 +97,13 @@ let parks = [
   },
   {
     Name: "Dry Tortugas",
-    State: "Flordia",
+    State: "Florida",
     Size: "64,701.22",
     Image: "dryTortugas.jpg",
   },
   {
     Name: "Everglades",
-    State: "Flordia",
+    State: "Florida",
     Size: "1,508,938.57",
     Image: "everglades.jpg",
   },
@@ -151,7 +151,7 @@ let parks = [
   },
   {
     Name: "Great Smoky Mountains",
-    State: "North Carolina/Tenessee",
+    State: "North Carolina/Tennessee",
     Size: "522,426.88",
     Image: "greatSmokeyMountains.jpg",
   },

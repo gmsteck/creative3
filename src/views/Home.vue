@@ -3,8 +3,8 @@
     <h2>Search Parks by State</h2>
     <div class="wrapper">
       <div class="search">
-        <form class="pure-form">
-          <i class="fas fa-search"></i><input v-model="searchText" />
+        <form class="pure-form" >
+          <i class="fas fa-search"></i><input v-model="searchText"  placeholder="Enter a US State" />
         </form>
       </div>
     </div>
