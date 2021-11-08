@@ -249,7 +249,7 @@ let parks = [
   },
   {
     Name: "Joshua Tree",
-    State: "Calidornia",
+    State: "California",
     Size: "795,155.85",
     Latitude: "33.79",
     Longitude: "115.90",
