@@ -201,7 +201,7 @@ let parks = [
   },
   {
     Name: "Great Smoky Mountains",
-    State: "North Carolina/Tenessee",
+    State: "North Carolina/Tennessee",
     Size: "522,426.88",
     Latitude: "35.68",
     Longitude: "83.53",

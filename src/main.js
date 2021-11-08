@@ -11,6 +11,7 @@ let data = {
   parkList: [],
 };
 
+
 new Vue({
   router,
   data,
